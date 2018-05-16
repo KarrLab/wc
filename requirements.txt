@@ -2,7 +2,7 @@ cement # for command line programs
 
 # tools
 git+https://github.com/KarrLab/kinetic_datanator.git#egg=kinetic_datanator-0.1.20[all]
-git+https://github.com/KarrLab/random_wc_model_generator.git#egg=random_wc_model_generator-0.0.1[all]
+git+https://github.com/KarrLab/rand_wc_model_gen.git#egg=rand_wc_model_gen-0.0.1[all]
 git+https://github.com/KarrLab/wc_kb.git#egg=wc_kb-0.0.1[all]
 git+https://github.com/KarrLab/wc_lang.git#egg=wc_lang-0.0.1[all]
 git+https://github.com/KarrLab/wc_sim.git#egg=wc_sim-0.0.1[all]

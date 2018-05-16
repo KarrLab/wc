@@ -77,7 +77,7 @@ class App(CementApp):
 
         # tools
         self.add_package_handlers(argv, 'tool', 'kinetic_datanator', 'kinetic_datanator')
-        self.add_package_handlers(argv, 'tool', 'random_wc_model_generator', 'rand_model_gen')
+        self.add_package_handlers(argv, 'tool', 'rand_wc_model_gen', 'rand_model_gen')
         self.add_package_handlers(argv, 'tool', 'wc_kb', 'kb')
         self.add_package_handlers(argv, 'tool', 'wc_lang', 'lang')
         self.add_package_handlers(argv, 'tool', 'wc_sim', 'sim')
