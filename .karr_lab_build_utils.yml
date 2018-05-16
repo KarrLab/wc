@@ -1,0 +1,5 @@
+static_analyses:
+  ignore_files: []
+downstream_dependencies: []
+email_notifications:
+  - jonrkarr@gmail.com
