@@ -57,8 +57,18 @@ class TestCore(unittest.TestCase):
                 self.assertEqual(captured.stderr.get_text(), '')
 
     def test_model_help(self):
+        config = {
+            'tool': {},
+            'model': {
+                'mycoplasma_pneumoniae': {
+                    'label': 'mycoplasma_pneumoniae',
+                    'description': 'Whole-cell model of Mycoplasma pneumoniae',
+                }
+            },
+        }
+
         with capturer.CaptureOutput(merged=False, relay=False) as captured:
-            with __main__.App(argv=['model']) as app:
+            with __main__.App(argv=['model'], config=config) as app:
                 # run app
                 app.run()
 
@@ -66,17 +76,55 @@ class TestCore(unittest.TestCase):
                 self.assertRegexpMatches(captured.stdout.get_text(), 'mycoplasma-pneumoniae')
                 self.assertEqual(captured.stderr.get_text(), '')
 
+    def test_model_not_installed(self):
+        config = {
+            'tool': {},
+            'model': {
+                'not_installed_model': {
+                    'label': 'not_installed_model',
+                    'description': 'A model that is not installed',
+                },
+            },
+        }
+
+        with self.assertRaises(SystemExit) as context:
+            with __main__.App(argv=['model', 'not-installed-model', '--help'], config=config) as app:
+                # run app
+                app.run()
+            self.assertRegexpMatches(context.Exception, 'must be installed to use this command')
+
     def test_tool_help(self):
+        config = {
+            'tool': {
+                'kinetic_datanator': {
+                    'label': 'kinetic_datanator',
+                    'description': 'Whole-cell model simulator',
+                },
+                'wc_lang': {
+                    'label': 'lang',
+                    'description': 'Framework for representing whole-cell models',
+                },
+            },
+            'model': {},
+        }
+
         with capturer.CaptureOutput(merged=False, relay=False) as captured:
-            with __main__.App(argv=['tool']) as app:
+            with __main__.App(argv=['tool'], config=config) as app:
                 # run app
                 app.run()
 
                 # test that the CLI produced the correct output
-                self.assertRegexpMatches(captured.stdout.get_text(), 'kb')
+                self.assertRegexpMatches(captured.stdout.get_text(), 'kinetic-datanator')
                 self.assertRegexpMatches(captured.stdout.get_text(), 'lang')
-                self.assertRegexpMatches(captured.stdout.get_text(), 'sim')
                 self.assertEqual(captured.stderr.get_text(), '')
+
+    def test_tool_kinetic_datanator(self):
+        with capturer.CaptureOutput(merged=False, relay=False) as captured:
+            with __main__.App(argv=['tool', 'kinetic-datanator', 'taxonomy', 'get-rank', 'Homo sapiens']) as app:
+                # run app
+                app.run()
+            self.assertEqual(captured.stdout.get_text(), 'species')
+            self.assertEqual(captured.stderr.get_text(), '')
 
     def test_tool_wc_lang(self):
         os.remove(self.filename)
