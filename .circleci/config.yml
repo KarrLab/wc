@@ -5,7 +5,7 @@ jobs:
     working_directory: /root/project
     docker:
 
-      - image: karrlab/build:0.0.24
+      - image: karrlab/build:latest
 
     steps:
       # Clone repository
