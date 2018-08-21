@@ -96,9 +96,9 @@ class TestCore(unittest.TestCase):
     def test_tool_help(self):
         config = {
             'tool': {
-                'kinetic_datanator': {
-                    'label': 'kinetic_datanator',
-                    'description': 'Whole-cell model simulator',
+                'wc_kb': {
+                    'label': 'kb',
+                    'description': 'Framework for knowledge bases for whole-cell models',
                 },
                 'wc_lang': {
                     'label': 'lang',
@@ -114,7 +114,7 @@ class TestCore(unittest.TestCase):
                 app.run()
 
                 # test that the CLI produced the correct output
-                self.assertRegexpMatches(captured.stdout.get_text(), 'kinetic-datanator')
+                self.assertRegexpMatches(captured.stdout.get_text(), 'kb')
                 self.assertRegexpMatches(captured.stdout.get_text(), 'lang')
                 self.assertEqual(captured.stderr.get_text(), '')
 
