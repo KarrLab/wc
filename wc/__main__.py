@@ -7,15 +7,14 @@
 """
 
 from .config.core import get_config
-from cement.core.foundation import CementApp
-from cement.core.controller import CementBaseController, expose
+import cement
 import copy
 import importlib
 import sys
 import wc
 
 
-class BaseController(CementBaseController):
+class BaseController(cement.Controller):
     """ Base controller for command line application """
 
     class Meta:
@@ -25,12 +24,12 @@ class BaseController(CementBaseController):
             (['-v', '--version'], dict(action='version', version=wc.__version__)),
         ]
 
-    @expose(hide=True)
-    def default(self):
+    @cement.ex(hide=True)
+    def _default(self):
         self.app.args.print_help()
 
 
-class ModelController(CementBaseController):
+class ModelController(cement.Controller):
     """ Model controller """
 
     class Meta:
@@ -39,12 +38,12 @@ class ModelController(CementBaseController):
         stacked_on = 'base'
         stacked_type = 'nested'
 
-    @expose(hide=True)
-    def default(self):
+    @cement.ex(hide=True)
+    def _default(self):
         self.app.args.print_help()
 
 
-class ToolController(CementBaseController):
+class ToolController(cement.Controller):
     """ Tool controller """
 
     class Meta:
@@ -53,12 +52,12 @@ class ToolController(CementBaseController):
         stacked_on = 'base'
         stacked_type = 'nested'
 
-    @expose(hide=True)
-    def default(self):
+    @cement.ex(hide=True)
+    def _default(self):
         self.app.args.print_help()
 
 
-class App(CementApp):
+class App(cement.App):
     """ Command line application """
     class Meta:
         label = 'wc'
@@ -139,8 +138,8 @@ class App(CementApp):
                 cls.Meta.handlers.append(handler)
         else:
             # add default handler for package that is not installed
-            @expose(hide=True)
-            def default(self):
+            @cement.ex(hide=True)
+            def _default(self):
                 raise Exception(('{0} must be installed to use this command. '
                                  'Run `pip install git+https://github.com/KarrLab/{0}.git` to install the package'
                                  ).format(self.Meta.package_name))  # pragma: no cover # coverage doesn't capture this
@@ -154,7 +153,7 @@ class App(CementApp):
                 }),
                 'default': default,
             }
-            handler = type(package_name + '_Controller', (CementBaseController,), attrs)
+            handler = type(package_name + '_Controller', (cement.Controller,), attrs)
 
             cls.Meta.handlers.append(handler)
 
