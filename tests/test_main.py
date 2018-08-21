@@ -118,12 +118,12 @@ class TestCore(unittest.TestCase):
                 self.assertRegexpMatches(captured.stdout.get_text(), 'lang')
                 self.assertEqual(captured.stderr.get_text(), '')
 
-    def test_tool_kinetic_datanator(self):
+    def test_tool_wc_lang(self):
         with capturer.CaptureOutput(merged=False, relay=False) as captured:
-            with __main__.App(argv=['tool', 'kinetic-datanator', 'taxonomy', 'get-rank', 'Homo sapiens']) as app:
+            with __main__.App(argv=['tool', 'lang', '--version']) as app:
                 # run app
                 app.run()
-            self.assertEqual(captured.stdout.get_text(), 'species')
+            self.assertRegexpMatches(captured.stdout.get_text(), '^\d+\.\d+\.\d+[a-zA-Z0-9]*$')
             self.assertEqual(captured.stderr.get_text(), '')
 
     def test_tool_wc_lang(self):

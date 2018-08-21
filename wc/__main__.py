@@ -26,7 +26,7 @@ class BaseController(cement.Controller):
 
     @cement.ex(hide=True)
     def _default(self):
-        self.app.args.print_help()
+        self._parser.print_help()
 
 
 class ModelController(cement.Controller):
@@ -40,7 +40,7 @@ class ModelController(cement.Controller):
 
     @cement.ex(hide=True)
     def _default(self):
-        self.app.args.print_help()
+        self._parser.print_help()
 
 
 class ToolController(cement.Controller):
@@ -54,7 +54,7 @@ class ToolController(cement.Controller):
 
     @cement.ex(hide=True)
     def _default(self):
-        self.app.args.print_help()
+        self._parser.print_help()
 
 
 class App(cement.App):
@@ -151,7 +151,7 @@ class App(cement.App):
                     'stacked_on': stacked_on,
                     'stacked_type': 'nested',
                 }),
-                'default': default,
+                '_default': _default,
             }
             handler = type(package_name + '_Controller', (cement.Controller,), attrs)
 
