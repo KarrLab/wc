@@ -27,18 +27,18 @@ class TestCore(unittest.TestCase):
         with mock.patch('sys.argv', ['wc', '--help']):
             with self.assertRaises(SystemExit) as context:
                 __main__.main()
-                self.assertRegexpMatches(context.Exception, 'usage: wc')
+                self.assertRegex(context.Exception, 'usage: wc')
 
     def test_help(self):
         with self.assertRaises(SystemExit):
             with __main__.App(argv=['--help']) as app:
                 app.run()
-            self.assertRegexpMatches(context.Exception, 'usage: wc')
+            self.assertRegex(context.Exception, 'usage: wc')
 
         with capturer.CaptureOutput(merged=False, relay=False) as captured:
             with __main__.App(argv=[]) as app:
                 app.run()
-            self.assertRegexpMatches(captured.stdout.get_text(), 'usage: wc')
+            self.assertRegex(captured.stdout.get_text(), 'usage: wc')
             self.assertEqual(captured.stderr.get_text(), '')
 
     def test_version(self):
@@ -73,7 +73,7 @@ class TestCore(unittest.TestCase):
                 app.run()
 
                 # test that the CLI produced the correct output
-                self.assertRegexpMatches(captured.stdout.get_text(), 'mycoplasma-pneumoniae')
+                self.assertRegex(captured.stdout.get_text(), 'mycoplasma-pneumoniae')
                 self.assertEqual(captured.stderr.get_text(), '')
 
     def test_model_not_installed(self):
@@ -91,7 +91,7 @@ class TestCore(unittest.TestCase):
             with __main__.App(argv=['model', 'not-installed-model', '--help'], config=config) as app:
                 # run app
                 app.run()
-            self.assertRegexpMatches(context.Exception, 'must be installed to use this command')
+            self.assertRegex(context.Exception, 'must be installed to use this command')
 
     def test_tool_help(self):
         config = {
@@ -114,8 +114,8 @@ class TestCore(unittest.TestCase):
                 app.run()
 
                 # test that the CLI produced the correct output
-                self.assertRegexpMatches(captured.stdout.get_text(), 'kb')
-                self.assertRegexpMatches(captured.stdout.get_text(), 'lang')
+                self.assertRegex(captured.stdout.get_text(), 'kb')
+                self.assertRegex(captured.stdout.get_text(), 'lang')
                 self.assertEqual(captured.stderr.get_text(), '')
 
     def test_tool_wc_lang(self):
@@ -123,7 +123,7 @@ class TestCore(unittest.TestCase):
             with __main__.App(argv=['tool', 'lang', '--version']) as app:
                 # run app
                 app.run()
-            self.assertRegexpMatches(captured.stdout.get_text(), '^\d+\.\d+\.\d+[a-zA-Z0-9]*$')
+            self.assertRegex(captured.stdout.get_text(), '^\d+\.\d+\.\d+[a-zA-Z0-9]*$')
             self.assertEqual(captured.stderr.get_text(), '')
 
     def test_tool_wc_lang(self):
