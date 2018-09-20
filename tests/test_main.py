@@ -123,7 +123,7 @@ class TestCore(unittest.TestCase):
             with __main__.App(argv=['tool', 'lang', '--version']) as app:
                 # run app
                 app.run()
-            self.assertRegex(captured.stdout.get_text(), '^\d+\.\d+\.\d+[a-zA-Z0-9]*$')
+            self.assertRegex(captured.stdout.get_text(), r'^\d+\.\d+\.\d+[a-zA-Z0-9]*$')
             self.assertEqual(captured.stderr.get_text(), '')
 
     def test_tool_wc_lang(self):
