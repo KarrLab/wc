@@ -2,8 +2,8 @@
 #### tools
 ###################################################
 
-[kinetic_datanator]
-git+https://github.com/KarrLab/kinetic_datanator.git#egg=kinetic_datanator-0.1.20[all]
+[datanator]
+git+https://github.com/KarrLab/datanator.git#egg=datanator-0.1.20[all]
 
 [rand_wc_model_gen]
 git+https://github.com/KarrLab/rand_wc_model_gen.git#egg=rand_wc_model_gen-0.0.1[all]
