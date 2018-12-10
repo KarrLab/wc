@@ -97,7 +97,7 @@ class App(cement.App):
             description (:obj:`str`): root descipription for the handlers within the application
 
         Raises:
-            :obj:`Exception`: if a handler is not a base or stacked on a base
+            :obj:`SystemExit`: if a handler is not a base or stacked on a base
         """
         if argv is None:
             argv = sys.argv[1:]
@@ -133,14 +133,14 @@ class App(cement.App):
                         handler.Meta.stacked_on = label + '_' + handler.Meta.stacked_on.replace('-', '_')
                     handler.Meta.stacked_type = 'nested'
                 else:
-                    raise Exception('Invalid base handler: {}'.format(handler.Meta.label))  # pragma: no cover
+                    raise SystemExit('Invalid base handler: {}'.format(handler.Meta.label))  # pragma: no cover
 
                 cls.Meta.handlers.append(handler)
         else:
             # add default handler for package that is not installed
             @cement.ex(hide=True)
             def _default(self):
-                raise Exception(('{0} must be installed to use this command. '
+                raise SystemExit(('{0} must be installed to use this command. '
                                  'Run `pip install git+https://github.com/KarrLab/{0}.git` to install the package'
                                  ).format(self.Meta.package_name))  # pragma: no cover # coverage doesn't capture this
             attrs = {
