@@ -6,13 +6,13 @@
 :License: MIT
 """
 
-import wc
+import wc_cli
 import types
 import unittest
 
 
 class ApiTestCase(unittest.TestCase):
     def test(self):
-        self.assertIsInstance(wc, types.ModuleType)
-        self.assertIsInstance(wc.config, types.ModuleType)
-        self.assertIsInstance(wc.config.get_config, types.FunctionType)
+        self.assertIsInstance(wc_cli, types.ModuleType)
+        self.assertIsInstance(wc_cli.config, types.ModuleType)
+        self.assertIsInstance(wc_cli.config.get_config, types.FunctionType)

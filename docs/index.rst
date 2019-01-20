@@ -1,4 +1,4 @@
-wc documentation
+wc_cli documentation
 ================
 Integrated user interface for whole-cell models and whole-cell modeling tools
 

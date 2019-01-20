@@ -1,12 +1,12 @@
-[//]: # ( [![PyPI package](https://img.shields.io/pypi/v/wc.svg)](https://pypi.python.org/pypi/wc) )
-[![Documentation](https://readthedocs.org/projects/wc/badge/?version=latest)](http://docs.karrlab.org/wc)
-[![Test results](https://circleci.com/gh/KarrLab/wc.svg?style=shield)](https://circleci.com/gh/KarrLab/wc)
-[![Test coverage](https://coveralls.io/repos/github/KarrLab/wc/badge.svg)](https://coveralls.io/github/KarrLab/wc)
-[![Code analysis](https://api.codeclimate.com/v1/badges/74c0313fb9f544b892d0/maintainability)](https://codeclimate.com/github/KarrLab/wc)
-[![License](https://img.shields.io/github/license/KarrLab/wc.svg)](LICENSE)
-![Analytics](https://ga-beacon.appspot.com/UA-86759801-1/wc/README.md?pixel)
+[![PyPI package](https://img.shields.io/pypi/v/wc_cli.svg)](https://pypi.python.org/pypi/wc_cli)
+[![Documentation](https://readthedocs.org/projects/wc_cli/badge/?version=latest)](http://docs.karrlab.org/wc_cli)
+[![Test results](https://circleci.com/gh/KarrLab/wc_cli.svg?style=shield)](https://circleci.com/gh/KarrLab/wc_cli)
+[![Test coverage](https://coveralls.io/repos/github/KarrLab/wc_cli/badge.svg)](https://coveralls.io/github/KarrLab/wc_cli)
+[![Code analysis](https://api.codeclimate.com/v1/badges/74c0313fb9f544b892d0/maintainability)](https://codeclimate.com/github/KarrLab/wc_cli)
+[![License](https://img.shields.io/github/license/KarrLab/wc_cli.svg)](LICENSE)
+![Analytics](https://ga-beacon.appspot.com/UA-86759801-1/wc_cli/README.md?pixel)
 
-# wc
+# wc_cli
 
 Integrated user interface for whole-cell models and whole-cell modeling tools
 
@@ -14,11 +14,11 @@ Integrated user interface for whole-cell models and whole-cell modeling tools
 1. Install dependencies
 2. Install this package
   ```
-  pip install git+git://github.com/KarrLab/wc#egg=wc
+  pip install git+git://github.com/KarrLab/wc_cli#egg=wc_cli
   ```
 
 ## Documentation
-Please see the [API documentation](http://docs.karrlab.org/wc).
+Please see the [API documentation](http://docs.karrlab.org/wc_cli).
 
 ## License
 The package is released under the [MIT license](LICENSE).

@@ -23,11 +23,11 @@ def get_config(extra=None):
         :obj:`configobj.ConfigObj`: nested dictionary with the configuration settings loaded from the configuration source(s).
     """
     paths = wc_utils.config.ConfigPaths(
-        default=pkg_resources.resource_filename('wc', 'config/core.default.cfg'),
-        schema=pkg_resources.resource_filename('wc', 'config/core.schema.cfg'),
+        default=pkg_resources.resource_filename('wc_cli', 'config/core.default.cfg'),
+        schema=pkg_resources.resource_filename('wc_cli', 'config/core.schema.cfg'),
         user=(
-            'wc.core.cfg',
-            os.path.expanduser('~/.wc/wc.core.cfg'),
+            'wc_cli.core.cfg',
+            os.path.expanduser('~/.wc/wc_cli.core.cfg'),
         ),
     )
 

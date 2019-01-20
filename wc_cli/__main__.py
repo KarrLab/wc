@@ -11,7 +11,7 @@ import cement
 import copy
 import importlib
 import sys
-import wc
+import wc_cli
 
 
 class BaseController(cement.Controller):
@@ -21,7 +21,7 @@ class BaseController(cement.Controller):
         label = 'base'
         description = "Whole-cell models and whole-cell modeling tools"
         arguments = [
-            (['-v', '--version'], dict(action='version', version=wc.__version__)),
+            (['-v', '--version'], dict(action='version', version=wc_cli.__version__)),
         ]
 
     @cement.ex(hide=True)

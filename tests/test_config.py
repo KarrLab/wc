@@ -6,7 +6,7 @@
 :License: MIT
 """
 
-from wc import config
+from wc_cli import config
 import unittest
 
 

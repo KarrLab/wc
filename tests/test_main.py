@@ -1,4 +1,4 @@
-""" Tests of wc command line interface (wc.__main__)
+""" Tests of wc_cli command line interface (wc_cli.__main__)
 
 :Author: Jonathan Karr <jonrkarr@gmail.com>
 :Date: 2018-05-15
@@ -6,13 +6,13 @@
 :License: MIT
 """
 
-from wc import __main__
+from wc_cli import __main__
 import capturer
 import mock
 import os
 import tempfile
 import unittest
-import wc
+import wc_cli
 
 
 class TestCore(unittest.TestCase):
@@ -46,14 +46,14 @@ class TestCore(unittest.TestCase):
             with capturer.CaptureOutput(merged=False, relay=False) as captured:
                 with self.assertRaises(SystemExit):
                     app.run()
-                self.assertEqual(captured.stdout.get_text(), wc.__version__)
+                self.assertEqual(captured.stdout.get_text(), wc_cli.__version__)
                 self.assertEqual(captured.stderr.get_text(), '')
 
         with __main__.App(argv=['--version']) as app:
             with capturer.CaptureOutput(merged=False, relay=False) as captured:
                 with self.assertRaises(SystemExit):
                     app.run()
-                self.assertEqual(captured.stdout.get_text(), wc.__version__)
+                self.assertEqual(captured.stdout.get_text(), wc_cli.__version__)
                 self.assertEqual(captured.stderr.get_text(), '')
 
     def test_model_help(self):
