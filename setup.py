@@ -7,7 +7,7 @@ except ImportError:
     import pkg_utils
 import os
 
-name = 'wc'
+name = 'wc_cli'
 dirname = os.path.dirname(__file__)
 package_data = {
     name: [
