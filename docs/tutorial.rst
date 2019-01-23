@@ -12,19 +12,19 @@ List the available models
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 .. code-block:: bash
 
-    wc model
+    wc-cli model
 
 Get the available operations for a model
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. code-block:: bash
 
-    wc model h1-hesc
+    wc-cli model h1-hesc
 
 Run a model operation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. code-block:: bash
 
-    wc model h1-hesc sim
+    wc-cli model h1-hesc sim
 
 
 Tools
@@ -34,19 +34,19 @@ List the available tools
 ~~~~~~~~~~~~~~~~~~~~~~~~
 .. code-block:: bash
 
-    wc tool
+    wc-cli tool
 
 Get the operations for a tool
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. code-block:: bash
 
-    wc tool lang
+    wc-cli tool lang
 
 Run an operation of a tool
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. code-block:: bash
 
-    wc tool lang validate /path/to/model.xlsx
+    wc-cli tool lang validate /path/to/model.xlsx
 
 
 Help
@@ -56,4 +56,4 @@ Get help
 ~~~~~~~~~~~~~~~~~~~~~~~~
 .. code-block:: bash
 
-    wc --help
+    wc-cli --help
