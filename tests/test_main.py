@@ -24,21 +24,21 @@ class TestCore(unittest.TestCase):
         os.remove(self.filename)
 
     def test_cli(self):
-        with mock.patch('sys.argv', ['wc', '--help']):
+        with mock.patch('sys.argv', ['wc-cli', '--help']):
             with self.assertRaises(SystemExit) as context:
                 __main__.main()
-                self.assertRegex(context.Exception, 'usage: wc')
+                self.assertRegex(context.Exception, 'usage: wc-cli')
 
     def test_help(self):
         with self.assertRaises(SystemExit):
             with __main__.App(argv=['--help']) as app:
                 app.run()
-            self.assertRegex(context.Exception, 'usage: wc')
+            self.assertRegex(context.Exception, 'usage: wc-cli')
 
         with capturer.CaptureOutput(merged=False, relay=False) as captured:
             with __main__.App(argv=[]) as app:
                 app.run()
-            self.assertRegex(captured.stdout.get_text(), 'usage: wc')
+            self.assertRegex(captured.stdout.get_text(), 'usage: wc-cli')
             self.assertEqual(captured.stderr.get_text(), '')
 
     def test_version(self):

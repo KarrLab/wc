@@ -60,7 +60,7 @@ class ToolController(cement.Controller):
 class App(cement.App):
     """ Command line application """
     class Meta:
-        label = 'wc'
+        label = 'wc-cli'
         base_controller = 'base'
         handlers = []
 

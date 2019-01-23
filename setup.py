@@ -35,7 +35,7 @@ setuptools.setup(
     package_data=md.package_data,
     entry_points={
         'console_scripts': [
-            'wc = wc_cli.__main__:main',
+            'wc-cli = wc_cli.__main__:main',
         ],
     },
     install_requires=md.install_requires,
