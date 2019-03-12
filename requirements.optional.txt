@@ -2,6 +2,9 @@
 #### tools
 ###################################################
 
+[bpforms]
+git+https://github.com/KarrLab/bpforms.git#egg=bpforms-0.0.5[all]
+
 [datanator]
 git+https://github.com/KarrLab/datanator.git#egg=datanator-0.1.20[all]
 
