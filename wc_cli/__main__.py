@@ -141,7 +141,7 @@ class App(cement.App):
             @cement.ex(hide=True)
             def _default(self):
                 raise SystemExit(('{0} must be installed to use this command. '
-                                 'Run `pip install git+https://github.com/KarrLab/{0}.git` to install the package'
+                                 'Run `pip install {0}` to install the package'
                                  ).format(self.Meta.package_name))  # pragma: no cover # coverage doesn't capture this
             attrs = {
                 'Meta': type('Meta', (), {

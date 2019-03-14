@@ -14,7 +14,8 @@ Integrated user interface for whole-cell models and whole-cell modeling tools
 1. Install dependencies
 2. Install this package
   ```
-  pip install git+git://github.com/KarrLab/wc_cli#egg=wc_cli
+  pip install -r .circleci/requirements.txt
+  pip install git+https://github.com/KarrLab/wc_cli.git#egg=wc_cli
   ```
 
 ## Documentation

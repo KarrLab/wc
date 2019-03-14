@@ -3,22 +3,22 @@
 ###################################################
 
 [bpforms]
-git+https://github.com/KarrLab/bpforms.git#egg=bpforms-0.0.5[all]
+bpforms[all]
 
 [datanator]
-git+https://github.com/KarrLab/datanator.git#egg=datanator-0.1.20[all]
+datanator[all]
 
 [rand_wc_model_gen]
-git+https://github.com/KarrLab/rand_wc_model_gen.git#egg=rand_wc_model_gen-0.0.1[all]
+rand_wc_model_gen[all]
 
 [wc_kb]
-git+https://github.com/KarrLab/wc_kb.git#egg=wc_kb-0.0.1[all]
+wc_kb[all]
 
 [wc_lang]
-git+https://github.com/KarrLab/wc_lang.git#egg=wc_lang-0.0.1[all]
+wc_lang[all]
 
 [wc_sim]
-git+https://github.com/KarrLab/wc_sim.git#egg=wc_sim-0.0.1[all]
+wc_sim[all]
 
 
 ###################################################
@@ -26,7 +26,7 @@ git+https://github.com/KarrLab/wc_sim.git#egg=wc_sim-0.0.1[all]
 ###################################################
 
 [h1_hesc]
-git+https://github.com/KarrLab/h1_hesc.git#egg=h1_hesc-0.0.1[all]
+h1_hesc[all]
 
 [mycoplasma_pneumoniae]
-git+https://github.com/KarrLab/mycoplasma_pneumoniae.git#egg=mycoplasma_pneumoniae-0.0.1[all]
+mycoplasma_pneumoniae[all]
