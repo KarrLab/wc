@@ -2,7 +2,7 @@
 README.rst
 
 # version
-include wc/VERSION
+include wc_cli/VERSION
 
 # license
 include LICENSE
@@ -12,4 +12,4 @@ include requirements.txt
 include requirements.optional.txt
 
 # configuration files
-recursive-include wc *.cfg
+recursive-include wc_cli *.cfg
