@@ -87,7 +87,7 @@ class App(cement.App):
 
     @classmethod
     def add_package_handlers(cls, argv, stacked_on, package_name, label, description):
-        """ Add handlers for a package to add to an application
+        """ Add a package to an application by adding its handlers
 
         Args:
             argv (:obj:`list` of :obj:`str`): command line arguments
