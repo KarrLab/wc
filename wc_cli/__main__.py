@@ -20,6 +20,7 @@ class BaseController(cement.Controller):
     class Meta:
         label = 'base'
         description = "Whole-cell models and whole-cell modeling tools"
+        help = "Whole-cell models and whole-cell modeling tools"
         arguments = [
             (['-v', '--version'], dict(action='version', version=wc_cli.__version__)),
         ]
@@ -35,6 +36,7 @@ class ModelController(cement.Controller):
     class Meta:
         label = 'model'
         description = 'Whole-cell models'
+        help = 'Whole-cell models'
         stacked_on = 'base'
         stacked_type = 'nested'
 
@@ -49,6 +51,7 @@ class ToolController(cement.Controller):
     class Meta:
         label = 'tool'
         description = 'Whole-cell modeling tools'
+        help = 'Whole-cell modeling tools'
         stacked_on = 'base'
         stacked_type = 'nested'
 
@@ -121,6 +124,7 @@ class App(cement.App):
                 if handler.Meta.label == 'base':
                     handler.Meta.label = label
                     handler.Meta.description = description
+                    handler.Meta.help = description
                     handler.Meta.stacked_on = stacked_on
                     handler.Meta.stacked_type = 'nested'
                 elif hasattr(handler.Meta, 'stacked_on'):
@@ -148,6 +152,7 @@ class App(cement.App):
                     'package_name': package_name,
                     'label': label,
                     'description': '{} (Not installed)'.format(description),
+                    'help': '{} (Not installed)'.format(description),
                     'stacked_on': stacked_on,
                     'stacked_type': 'nested',
                 }),
