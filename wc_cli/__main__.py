@@ -129,7 +129,7 @@ class App(cement.App):
                     handler.Meta.stacked_type = 'nested'
                 elif hasattr(handler.Meta, 'stacked_on'):
                     handler.Meta.aliases = [handler.Meta.label]
-                    handler.Meta.aliases_only = True
+                    # handler.Meta.aliases_only = True # remove from cement 3
                     handler.Meta.label = label + '_' + handler.Meta.label.replace('-', '_')
                     if handler.Meta.stacked_on == 'base':
                         handler.Meta.stacked_on = label
