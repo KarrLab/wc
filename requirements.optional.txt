@@ -11,8 +11,8 @@ bcforms[all]
 [datanator]
 datanator[all]
 
-[obj_model]
-obj_model[all]
+[obj_tables]
+obj_tables[all]
 
 [rand_wc_model_gen]
 rand_wc_model_gen[all]
