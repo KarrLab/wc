@@ -1,3 +1,5 @@
+ruamel.yaml >= 0.15.78
+
 # Karr Lab - tools
 git+https://github.com/KarrLab/wc_utils.git#egg=wc_utils[all]
 git+https://github.com/KarrLab/wc_onto.git#egg=wc_onto[all]
