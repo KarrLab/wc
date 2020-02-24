@@ -1,9 +1,6 @@
 # description
 README.rst
 
-# version
-include wc_cli/VERSION
-
 # license
 include LICENSE
 
